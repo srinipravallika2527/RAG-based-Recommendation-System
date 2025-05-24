@@ -35,9 +35,6 @@ pip or conda
 Git
 Installation
 
-Clone the repository
-bashgit clone https://github.com/yourusername/rag-recommendation-system.git
-cd rag-recommendation-system
 
 Create virtual environment
 bashpython -m venv venv
@@ -58,32 +55,7 @@ bashpython scripts/setup_database.py
 Quick Start
 pythonfrom rag_recommender import RAGRecommendationSystem
 
-# Initialize the system
-recommender = RAGRecommendationSystem(
-    model_name="sentence-transformers/all-MiniLM-L6-v2",
-    vector_db_path="./data/vectors.db"
-)
 
-# Get recommendations
-user_query = "I'm looking for comfortable running shoes under $100"
-recommendations = recommender.get_recommendations(
-    query=user_query,
-    num_recommendations=5,
-    filters={"category": "footwear", "price_max": 100}
-)
-
-print(recommendations)
-API Usage
-Start the Flask API server:
-bashpython app.py
-Make requests to the API:
-bashcurl -X POST http://localhost:5000/api/recommend \
-  -H "Content-Type: application/json" \
-  -d '{
-    "query": "comfortable running shoes",
-    "user_id": "user123",
-    "num_recommendations": 5
-  }'
 📊 Performance Metrics
 MetricValueCustomer Retention Increase22%Average Response Time< 200msRecommendation Accuracy89.2%System Uptime99.9%Daily Active Users10,000+
 🔧 Technical Stack
